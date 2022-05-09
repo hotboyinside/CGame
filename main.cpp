@@ -65,7 +65,19 @@ int main()
 
 
 	sf::Font font;
+<<<<<<<<< Temporary merge branch 1
+	if (!font.loadFromFile("C:/Users/Acer/Desktop/игра/BoncegroFF4F.otf"))
+=========
 	if (!font.loadFromFile("resources/BoncegroFF4F.otf"))
+>>>>>>>>> Temporary merge branch 2
+	if (!font.loadFromFile("C:/Users/Acer/Desktop/игра/BoncegroFF4F.otf"))
+=========
+	if (!font.loadFromFile("resources/BoncegroFF4F.otf"))
+>>>>>>>>> Temporary merge branch 2
+	if (!font.loadFromFile("C:/Users/Acer/Desktop/игра/BoncegroFF4F.otf"))
+=========
+	if (!font.loadFromFile("resources/BoncegroFF4F.otf"))
+>>>>>>>>> Temporary merge branch 2
 		return EXIT_FAILURE;
 
 
