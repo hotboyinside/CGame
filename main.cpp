@@ -17,8 +17,19 @@ int main()
 	sf::Vector2f paddleSize(25, 100);
 	float ballRadius = 10.f;
 
+	sf::Texture t1;
+	t1.loadFromFile("resources/cifr.png");
 
-	sf::RenderWindow window(sf::VideoMode(gameWidth, gameHeight, 32), "SFML Pong",
+	
+	sf::Sprite score[2];
+	int sc[2] = { 0, 0 };
+	for (int i = 0; i < 2; i++) {
+		score[i].setTexture(t1);
+		score[i].setPosition(749 * i, 10);
+	}
+
+
+	sf::RenderWindow window(sf::VideoMode(gameWidth, gameHeight, 32), L"Пинг-понг",
 		sf::Style::Titlebar | sf::Style::Close);
 	window.setVerticalSyncEnabled(true);
 
@@ -54,7 +65,7 @@ int main()
 
 
 	sf::Font font;
-	if (!font.loadFromFile("resources/sansation.ttf"))
+	if (!font.loadFromFile("resources/BoncegroFF4F.otf"))
 		return EXIT_FAILURE;
 
 
@@ -63,7 +74,7 @@ int main()
 	pauseMessage.setCharacterSize(40);
 	pauseMessage.setPosition(170.f, 150.f);
 	pauseMessage.setFillColor(sf::Color::White);
-	pauseMessage.setString("Welcome to SFML pong!\nPress space to start the game");
+	pauseMessage.setString(L"Добро пожаловать в Пинг-понг!\nНажмите space чтобы начать игру!");
 
 
 	sf::Clock AITimer;
@@ -155,13 +166,15 @@ int main()
 
 			if (ball.getPosition().x - ballRadius < 0.f)
 			{
+				sc[1]++;
 				isPlaying = false;
-				pauseMessage.setString("You lost!\nPress space to restart or\nescape to exit");
+				pauseMessage.setString(L"Ты проиграл!\nНажми space чтобы начать заново\nили escape чтобы выйти");
 			}
 			if (ball.getPosition().x + ballRadius > gameWidth)
 			{
+				sc[0]++;
 				isPlaying = false;
-				pauseMessage.setString("You won!\nPress space to restart or\nescape to exit");
+				pauseMessage.setString(L"Ты выиграл!\nНажми space чтобы начать заново\nили escape чтобы выйти");
 			}
 			if (ball.getPosition().y - ballRadius < 0.f)
 			{
@@ -204,6 +217,14 @@ int main()
 				ball.setPosition(rightPaddle.getPosition().x - ballRadius - paddleSize.x / 2 - 0.1f, ball.getPosition().y);
 			}
 		}
+		for (int i = 0; i < 2; i++) {
+			if (sc[i] < 10)
+				score[i].setTextureRect(sf::IntRect(50 * sc[i], 0, 50, 75));
+			else if (sc[i] == 10)
+				score[i].setTextureRect(sf::IntRect(500, 0, 75, 75));
+			else if (sc[i] == 11)
+				score[i].setTextureRect(sf::IntRect(580, 0, 75, 75));
+		}
 
 
 		window.clear(sf::Color(50, 200, 50));
@@ -213,6 +234,8 @@ int main()
 			window.draw(leftPaddle);
 			window.draw(rightPaddle);
 			window.draw(ball);
+			for (int i = 0; i < 2; i++)
+				window.draw(score[i]);
 		}
 		else
 		{

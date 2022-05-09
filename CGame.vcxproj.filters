@@ -664,5 +664,13 @@
     <Font Include="resources\sansation.ttf">
       <Filter>Resource Files</Filter>
     </Font>
+    <Font Include="..\игра\BoncegroFF4F.otf">
+      <Filter>Resource Files</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Downloads\cifr.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
