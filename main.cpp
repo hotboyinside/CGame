@@ -65,7 +65,7 @@ int main()
 
 
 	sf::Font font;
-	if (!font.loadFromFile("resources/BoncegroFF4F.otf"))
+	if (!font.loadFromFile("resources/sansation.ttf"))
 		return EXIT_FAILURE;
 
 

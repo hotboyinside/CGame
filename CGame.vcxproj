@@ -588,11 +588,11 @@ copy /Y "$(SolutionDir)resources"  "$(TargetDir)resources\"</Command>
     <Media Include="resources\ball.wav" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="..\игра\BoncegroFF4F.otf" />
+    <Font Include="resources\BoncegroFF4F.otf" />
     <Font Include="resources\sansation.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\Downloads\cifr.png" />
+    <Image Include="resources\cifr.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
