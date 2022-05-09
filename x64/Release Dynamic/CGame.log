@@ -1,0 +1,17 @@
+﻿  Скопировано файлов:         1.
+  Скопировано файлов:         1.
+  Скопировано файлов:         1.
+  Скопировано файлов:         1.
+  Скопировано файлов:         1.
+  Скопировано файлов:         1.
+  C:\Users\Acer\Desktop\CGame\resources\ball.wav
+  C:\Users\Acer\Desktop\CGame\resources\BoncegroFF4F.otf
+  C:\Users\Acer\Desktop\CGame\resources\cifr.png
+  C:\Users\Acer\Desktop\CGame\resources\sansation.ttf
+  Скопировано файлов:         4.
+  main.cpp
+c:\users\acer\desktop\cgame\main.cpp(28): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  Создание кода
+  All 67 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  CGame.vcxproj -> C:\Users\Acer\Desktop\CGame\x64\Release Dynamic\CGame.exe
